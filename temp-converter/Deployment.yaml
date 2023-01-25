@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temp-converter
+  labels:
+    app: convert-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: convert-app
+  template:
+    metadata:
+      labels:
+        app: convert-app
+    spec:
+      containers:
+        - name: convert-app
+          image: szadhub/temp-converter:latest
+          ports:
+          - containerPort: 8080
+---
+
