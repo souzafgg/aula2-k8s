@@ -9,7 +9,7 @@ spec:
    - port: 80
      targetPort: 8080
      nodePort: 32000
-  type: LoadBalancer
+  type: NodePort
 
 ---
 
@@ -21,6 +21,6 @@ spec:
   selector:
     app: postgres
   ports:
-   - port: 27017
+   - port: 5432
   type: ClusterIP
     
